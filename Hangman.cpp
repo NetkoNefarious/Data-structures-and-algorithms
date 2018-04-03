@@ -45,7 +45,7 @@ void CheckLetter(char letter, string word, vector<char>& wrongLetters, string& c
         return;
     }
 
-    unsigned pos;
+    int pos;
 
     if ( (pos = word.find(letter, 0) ) == word.npos)
     {
