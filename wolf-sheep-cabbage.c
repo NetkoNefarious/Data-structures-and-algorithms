@@ -13,7 +13,7 @@ void push(int x)
     end %= MAXSIZE;
 }
 
-int pop ()
+int pop()
 {
     int x = queue[start++];
     start %= MAXSIZE;
@@ -43,8 +43,6 @@ void PrintState(int wolf, int sheep, int cabbage, int farmer)
 // Limited by memoization
 int DFS(int wolf, int sheep, int cabbage, int farmer)
 {
-    int depth = 1;
-
     if (mem[wolf][sheep][cabbage][farmer])
         return 0;
 
@@ -55,6 +53,8 @@ int DFS(int wolf, int sheep, int cabbage, int farmer)
         (sheep && cabbage && !farmer) || (!sheep && !cabbage && farmer))
         return 0;
 
+	int depth = 1;
+	
     PrintState(wolf, sheep, cabbage, farmer);
 
     // Win state
